@@ -140,24 +140,7 @@ resource_id = '86f93c93-6c4a-49d0-977f-68ab9174c47e'
 #     def print_class_attribute(self):
 #         print(self.class_attribute)
 
-# c1 = MyClass()
 
-# c1.instance_method()
-# c1.print_class_attribute()
-# # 这是另一个类属性
-
-# c2 = MyClass()
-# c2.print_class_attribute()
-# # 这是一个类属性
-
-# # 一次性读取chunks_id列表
-# chunk_ids = [
-#     "0000cdd4-93de-4d10-b9d2-f9b90f0bc47f",
-#     "00034423-f729-4a57-a424-83e0827012ab",
-#     "0005162d-d394-404e-9678-82e056e2e677"
-# ]
-# response = supabase.table('chunks').select('*').in_('id', chunk_ids).execute().data
-# print(response)
 # print(len(response))
 
 str1 = "你是谁"

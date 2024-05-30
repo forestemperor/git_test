@@ -71,38 +71,7 @@ class IndexModule:
         conn.close()
     
      
-    def construct_postings_lists(self):
-        config = configparser.ConfigParser()
-        config.read(self.config_path, self.config_encoding)
-        Data = pd.read_csv(r'data\data.csv', sep='\t', header=None)
-        files = set(Data[1])
-        self.files = {k:v for k,v in enumerate(files)}
-        
-        AVG_L = 0
-
-        for i,x in self.files.items():
-            
-            seg_list = jieba.lcut(x, cut_all=False)
-            ld, cleaned_dict = self.clean_list(seg_list)
-            AVG_L = AVG_L + ld
-            
-            # key是分出的词，value是词数
-            for key, value in cleaned_dict.items():
-                # i 文本块的id  value 分词在这个文本块里出现的次数  ld clean后的文本长度
-                d = [i, value, ld] 
-                if key in self.postings_lists:
-                    self.postings_lists[key][0] = self.postings_lists[key][0] + 1 # df++  df即含有该词的文档数
-                    self.postings_lists[key][1].append(d)
-                else:
-                    self.postings_lists[key] = [1, [d]]# {word: [df, [[...],[...]]}
-        AVG_L = AVG_L / len(files)
-        config.set('DEFAULT', 'N', str(len(files)))
-        config.set('DEFAULT', 'avg_l', str(AVG_L))
-        with open(self.config_path, 'w', encoding = self.config_encoding) as configfile:
-            config.write(configfile)
-        self.write_postings_and_knowledge_to_db(config['DEFAULT']['db_path'])
-
-
+   
 
 
 if __name__ == "__main__":
