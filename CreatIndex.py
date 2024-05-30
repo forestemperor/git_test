@@ -106,9 +106,5 @@ class IndexModule:
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     im = IndexModule('./config.ini', "uft-8")
-=======
-    im = IndexModule('./config.ini',"utf")
->>>>>>> 5b2e26af9350a4984daed842c4bf1858aba260b8
     im.construct_postings_lists()
