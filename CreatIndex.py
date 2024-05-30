@@ -100,11 +100,15 @@ class IndexModule:
         config.set('DEFAULT', 'avg_l', str(AVG_L))
         with open(self.config_path, 'w', encoding = self.config_encoding) as configfile:
             config.write(configfile)
-        self.write_postings_and_knowledge_to_db(config['DEFAULT']['db_papppp'])
+        self.write_postings_and_knowledge_to_db(config['DEFAULT']['db_path'])
 
 
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     im = IndexModule('./config.ini', "uft-8")
+=======
+    im = IndexModule('./config.ini',"utf")
+>>>>>>> 5b2e26af9350a4984daed842c4bf1858aba260b8
     im.construct_postings_lists()
