@@ -100,7 +100,7 @@ class IndexModule:
         config.set('DEFAULT', 'avg_l', str(AVG_L))
         with open(self.config_path, 'w', encoding = self.config_encoding) as configfile:
             config.write(configfile)
-        self.write_postings_and_knowledge_to_db(config['DEFAULT']['db_papppp'])
+        self.write_postings_and_knowledge_to_db(config['DEFAULT']['db_path'])
 
 
 
