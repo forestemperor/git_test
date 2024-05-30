@@ -66,11 +66,10 @@ class IndexModule:
         
         conn.commit()
         conn.close()
-    
-     
+
    
 
 
 if __name__ == "__main__":
-    im = IndexModule('./config.ini', "uft-8")
+    im = IndexModule('./config.ini', "uft-888888")
     im.construct_postings_lists()
