@@ -1,13 +1,4 @@
-import time
-import jieba
-import configparser
-import pandas as pd
-import sqlite3
-import os
-import dotenv
-import supabase
-from supabase import create_client, Client
-from tqdm import tqdm
+
 # jieba.load_userdict('./userdict/2000000-dict.txt')
 
 dotenv.load_dotenv()

@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import jieba
-import configparser
-import pandas as pd
-import sqlite3
+
 # jieba.load_userdict('./userdict/2000000-dict.txt')
 
 
