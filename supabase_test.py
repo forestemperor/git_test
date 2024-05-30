@@ -164,8 +164,8 @@ str1 = "你是谁"
 str2 = "我是超人"
 str3 = "你好呀"
 dict1 = {k:v for k, v in enumerate(str1)}
-dict2 = {k:v for k, v in enumerate(str2)}
-dict3 = {k:v for k, v in enumerate(str3)}
+dict2 = {k:v for k, v in enumerate(str1)}
+dict3 = {k:v for k, v in enumerate(str1)}
 lst1 = [dict1, dict2, dict3]
 print(lst1)
 lst2 = lst1[::-1]
