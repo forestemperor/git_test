@@ -163,9 +163,9 @@ resource_id = '86f93c93-6c4a-49d0-977f-68ab9174c47e'
 str1 = "你是谁"
 str2 = "我是超人"
 str3 = "你好呀"
-dict1 = {k:v for k, v in enumerate(str2)}
+dict1 = {k:v for k, v in enumerate(str1)}
 dict2 = {k:v for k, v in enumerate(str2)}
-dict3 = {k:v for k, v in enumerate(str2)}
+dict3 = {k:v for k, v in enumerate(str3)}
 lst1 = [dict1, dict2, dict3]
 print(lst1)
 lst2 = lst1[::-1]
