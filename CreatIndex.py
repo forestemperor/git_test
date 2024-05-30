@@ -4,40 +4,6 @@
 # jieba.load_userdict('./userdict/2000000-dict.txt')
 
 
-
-class IndexModule:
-
-    postings_lists = {}
-
-    def __init__(self, config_path, config_encoding):
-        self.config_path = config_path
-        self.config_encoding = config_encoding
-        config = configparser.ConfigParser()
-        config.read(config_path, config_encoding)
-        f = open(config['DEFAULT']['stop_words_path'], encoding = config['DEFAULT']['stop_words_encoding'])
-        words = f.read()
-        self.stop_words = set(words.split('\n'))
-    
-
-    def is_number(self, s):
-        try:
-            float(s)
-            return True
-        except ValueError:
-            return False
-        
-    def clean_list(self, seg_list):
-        cleaned_dict = {}
-        n = 0
-        for i in seg_list:
-            i = i.strip().lower()
-            if i != '' and not self.is_number(i) and i not in self.stop_words:
-                n = n + 1
-                if i in cleaned_dict:
-                    cleaned_dict[i] = cleaned_dict[i] + 1
-                else:
-                    cleaned_dict[i] = 1
-        return n, cleaned_dict
     
     
     def write_postings_and_knowledge_to_db(self, db_path):
