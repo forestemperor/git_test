@@ -106,5 +106,5 @@ class IndexModule:
 
 
 if __name__ == "__main__":
-    im = IndexModule('./config.ini',"utf-8")
+    im = IndexModule('./config.ini', "uft-8")
     im.construct_postings_lists()
